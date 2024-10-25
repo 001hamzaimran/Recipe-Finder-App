@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Recipe Finder</title>
+    
 </head>
+<style>
+    #loader {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+</style>
 <body>
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden"></span>
+        </div>
+    </div>
+    
     <div class="container mt-5">
         <h1 class="text-center">Recipe Finder</h1>
         <div class="form-group">
@@ -16,6 +31,28 @@
         <button id="search-btn" class="btn btn-primary btn-block">Search Recipes</button>
         <div id="recipe-results" class="mt-4"></div>
     </div>
+
+    <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recipeModalLabel">Recipe Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modal-recipe-image" src="" class="img-fluid" alt="">
+                    <h6>Instructions:</h6>
+                    <p id="modal-instructions"></p>
+                    <h6>Ingredients:</h6>
+                    <ul id="modal-ingredients"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
